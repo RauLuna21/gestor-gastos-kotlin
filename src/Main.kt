@@ -1,6 +1,6 @@
 package src
 
-// 1. Declaración de funciones a nivel de archivo
+// Declaración de funciones a nivel de archivo
 fun registrarGasto(
     conceptos: MutableList<String>,
     categorias: MutableList<String>,
@@ -8,7 +8,7 @@ fun registrarGasto(
 ) {
     val categoriasDisponibles = listOf("Comida", "Transporte", "Entretenimiento", "Servicios", "Otros")
 
-    // 1. Solicitar concepto
+    // 1. Solicita concepto
     print("Ingrese el concepto del gasto: ")
     var concepto = readlnOrNull()?.trim() ?: ""
     while (concepto.isEmpty()) {
@@ -16,7 +16,7 @@ fun registrarGasto(
         concepto = readlnOrNull()?.trim() ?: ""
     }
 
-    // 2. Mostrar y validar categoría
+    // Mostrar y validar categoría
     println("\nCategorías disponibles:")
     for ((index, cat) in categoriasDisponibles.withIndex()) {
         println("${index + 1}. $cat")
@@ -45,12 +45,12 @@ fun registrarGasto(
         }
     }
 
-    // 4. Agregar a las tres listas
+    // Agregar a las tres listas
     conceptos.add(concepto)
     categorias.add(categoriaSeleccionada)
     montos.add(monto)
 
-    // 5. Desplegar la tabla formateada inmediatamente
+    // Desplegar la tabla formateada inmediatamente
     mostrarGastos(conceptos, categorias, montos)
 }
 
@@ -74,7 +74,7 @@ fun mostrarGastos(
     println("Total gastado: $${"%.2f".format(total)}\n")
 }
 
-// 2. Punto de entrada principal
+// Punto de entrada principal
 fun main() {
     println("Gestor semanal de gastos\n")
 
